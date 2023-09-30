@@ -25,6 +25,20 @@ jobs:
       - run: exit 1
     continue-on-error: true
 
+
+
+  artifact:
+    needs: integration
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Create Artifact
+        run: echo "hello" > hello.txt
+      - name: Archive Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: hello.txt
+
   prod:
     needs: integration
     runs-on: ubuntu-20.04
