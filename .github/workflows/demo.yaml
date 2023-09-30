@@ -25,8 +25,6 @@ jobs:
       - run: exit 1
     continue-on-error: true
 
-
-
   artifact:
     needs: integration
     runs-on: ubuntu-20.04
@@ -38,9 +36,9 @@ jobs:
         with:
           name: my-artifact
           path: hello.txt
-
+          
   prod:
-    needs: integration
+    needs: artifact
     runs-on: ubuntu-20.04
     steps:
       - run: echo "This is a deploy step"
