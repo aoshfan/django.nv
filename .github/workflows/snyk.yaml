@@ -3,7 +3,8 @@ name: Snyk                                  # workflow name
 on:
   push:
     branches:                                 # similar to "only" in GitLab
-      - main
+      #- main
+      - PREVENT-FROM-RUNNING
 
 jobs:
   build:
