@@ -1,4 +1,4 @@
-name: Django                                  # workflow name
+name: BasicWorkflow                                  # workflow name
 
 on:
   push:                                       
